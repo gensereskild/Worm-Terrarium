@@ -50,6 +50,9 @@ int main(int argc, char **argv){
         wait(NULL); //Dette venter tydeligvis på at child prosessen er ferdig
     }
     //Okay skal nå skrive seg selv til en ny fil.
-    //FILE file1 = fopen()
+    FILE *file1 = fopen("./test_text.txt", "w+");
+    char eksempel_tekst[100] = "Dette er en eksempeltekst i guess bro.";
+    fwrite(eksempel_tekst, 1, sizeof(eksempel_tekst), file1);
+    fclose(file1);
     return 0;
 }
